@@ -12,7 +12,7 @@ const PizzaSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (createdAtVal) => dateFormat(createdAtVal)
+      get: createdAtVal => dateFormat(createdAtVal)
     },
     size: {
       type: String,
@@ -31,6 +31,7 @@ const PizzaSchema = new Schema(
       virtuals: true,
       getters: true
     },
+    // prevents virtuals from creating duplicate of _id as `id`
     id: false
   }
 );
