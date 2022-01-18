@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(require('./routes'));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pizza-hunt', {
-  useFindAndModify: false,
+  // useFindAndModify: false, // not supported in Mongoose 6.0
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
