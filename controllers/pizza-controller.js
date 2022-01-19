@@ -49,7 +49,7 @@ const pizzaController = {
         }
         res.json(dbPizzaData);
       })
-      .catch(err => res.status(400).json(err));
+      .catch(err => res.json(err));
   },
 
   // delete pizza
